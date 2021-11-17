@@ -17,9 +17,9 @@ jobs:
         with:
           java-version: 11
       - name: Build and analyze
+      - uses: gradle/gradle-build-action@v2
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Needed to get PR information, if any
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
-      - uses: gradle/gradle-build-action@v2
         with:
           arguments: ./gradlew build sonarqube --info
