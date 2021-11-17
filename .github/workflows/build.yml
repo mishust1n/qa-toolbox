@@ -27,5 +27,5 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Needed to get PR information, if any
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
       - uses: gradle/gradle-build-action@v2
-                - with:
-                arguments: ./gradlew build sonarqube --info
+        with:
+          arguments: ./gradlew build sonarqube --info
